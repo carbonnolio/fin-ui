@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { SearchFormComponent } from './components';
+import { SearchFormComponent } from './components/search-form/search-form.component';
 
 const routes: Routes = [
   {
