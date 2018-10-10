@@ -8,7 +8,8 @@ import { Observable } from 'rxjs';
 export class TicketSearchService {
   constructor(private http: HttpClient) {}
 
-  // getTicket = (value: string): Observable<Ticket[]> => this.http.get<Ticket[]>('../../../mocks/ap-lookup.json');
-  getTicket = (value: string): Observable<Ticket[]> => this.http.get<Ticket[]>(`http://localhost:4300/api/lookup?symbol=${value}`);
+  getTicket = (value: string): Observable<Ticket[]> =>
+    this.http.get<Ticket[]>('../../../mocks/ap-lookup.json');
+  // getTicket = (value: string): Observable<Ticket[]> => this.http.get<Ticket[]>(`http://localhost:4300/api/lookup?symbol=${value}`);
   // http://localhost:4300/api/lookup?symbol
 }

@@ -9,6 +9,8 @@ import { TicketSearchRoutingModule } from './ticket-search-routing.module';
 import { SearchFormComponent } from './components/search-form/search-form.component';
 
 import { MatInputModule } from '@angular/material/input';
+import { MatCardModule } from '@angular/material/card';
+import { MatGridListModule } from '@angular/material/grid-list';
 import {MatAutocompleteModule} from '@angular/material/autocomplete';
 
 import { TicketSearchService } from './services/ticket-search.service';
@@ -21,6 +23,8 @@ import { TicketSearchEffects } from './store/ticket-search.effects';
     TicketSearchRoutingModule,
     MatAutocompleteModule,
     MatInputModule,
+    MatCardModule,
+    MatGridListModule,
     HttpClientModule,
     StoreModule.forFeature('searchTickets', ticketSearchReducer),
     EffectsModule.forFeature([TicketSearchEffects])

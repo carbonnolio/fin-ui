@@ -5,7 +5,8 @@ import { HttpErrorResponse } from '@angular/common/http';
 export enum TicketSearchActionTypes {
   TICKET_SEARCH_VALUE_CHANGED = '[Ticket Search] Search value changed',
   TICKET_SEARCH_SUCCESS = '[Ticket Search] Get tickets success',
-  TICKET_SEARCH_FAILURE = '[Ticket Search] Get tickets failure'
+  TICKET_SEARCH_FAILURE = '[Ticket Search] Get tickets failure',
+  TICKET_SEARCH_VALUE_PICKED = '[Ticket Search] Search value picked'
 }
 
 export class ActionTicketSearchValueChanged implements Action {
@@ -23,4 +24,12 @@ export class ActionTicketSearchGetFailure implements Action {
   constructor(public payload: { error: HttpErrorResponse, ticketVal: string }) {}
 }
 
-export type TicketSearchActions = ActionTicketSearchValueChanged | ActionTicketSearchGetSuccess | ActionTicketSearchGetFailure;
+export class ActionTicketSearchValuePicked implements Action {
+  readonly type = TicketSearchActionTypes.TICKET_SEARCH_VALUE_PICKED;
+  constructor(public payload: string) {}
+}
+
+export type TicketSearchActions = ActionTicketSearchValueChanged
+| ActionTicketSearchGetSuccess
+| ActionTicketSearchGetFailure
+| ActionTicketSearchValuePicked;

@@ -8,6 +8,7 @@ export const initialState: TicketSearchState = {
 };
 
 export const selectorTickets = state => state.searchTickets.tickets;
+export const selectorTicketValue = state => state.searchTickets.ticketVal;
 
 export function ticketSearchReducer(state: TicketSearchState = initialState, action: TicketSearchActions) {
   switch (action.type) {
@@ -36,6 +37,12 @@ export function ticketSearchReducer(state: TicketSearchState = initialState, act
         tickets: null,
         httpError: action.payload.error,
         ticketVal: action.payload.ticketVal
+      };
+
+    case TicketSearchActionTypes.TICKET_SEARCH_VALUE_PICKED:
+      return {
+        ...state,
+        ticketVal: action.payload
       };
 
     default:
